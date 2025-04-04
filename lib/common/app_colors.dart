@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class AppColors {
@@ -13,7 +11,7 @@ class AppColors {
   static const Color textSecondary = Color(0xFF666666);
   static const Color textDetails = Color(0xFFFFFFFF);
 
-  static const LinearGradient greenGradient = LinearGradient(
+  static const LinearGradient gradient = LinearGradient(
     colors: [secondary, primary],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,

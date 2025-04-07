@@ -25,7 +25,7 @@ class SplashPageState extends State<SplashPage> {
           children: [
             // Logo
             SvgPicture.asset(
-              'assets/logo.svg',
+              'assets/images/logo.svg',
               width: 80, 
             ),
 
@@ -46,7 +46,7 @@ class SplashPageState extends State<SplashPage> {
                 Text(
                   'Finances',
                   style: AppTextStyles.bigText.copyWith(
-                    color: AppColors.textDetails, // Correção aplicada aqui
+                    color: AppColors.textTitle, // Correção aplicada aqui
                   ),
                 ),
               ],

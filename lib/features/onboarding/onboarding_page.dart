@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_finances/common/app_colors.dart';
-import 'package:my_finances/common/app_text_styles.dart';
+import 'package:my_finances/common/constants/app_colors.dart';
+import 'package:my_finances/common/constants/app_text_styles.dart';
+import 'package:my_finances/common/widgets/primary_button.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -21,9 +22,9 @@ class OnboardingPageState extends State<OnboardingPage> {
             flex: 2,
             child: Container(
               color: AppColors.background,
-              child: Image.asset('assets/images/onboarding.png')
-              ),
+              child: Image.asset('assets/images/onboarding.png'),
             ),
+          ),
           Expanded(
             child: Container(
               color: AppColors.card,
@@ -33,50 +34,24 @@ class OnboardingPageState extends State<OnboardingPage> {
                   Text(
                     'Spend Smarter\nSave More',
                     textAlign: TextAlign.center,
-                    style: AppTextStyles.bigText.copyWith(color: AppColors.primary),
+                    style: AppTextStyles.bigText.copyWith(
+                      color: AppColors.primary,
                     ),
+                  ),
                   const SizedBox(height: 20),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 40.0),
                     child: SizedBox(
                       width: double.infinity,
                       height: 60,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          gradient: AppColors.gradient,
-                          borderRadius: BorderRadius.circular(30),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withAlpha(51), // 0.2 * 255 = 51
-                              blurRadius: 5,
-                              offset: const Offset(0, 3),
-                            ),
-                          ],
-                        ),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            // ação do botão
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.transparent,
-                            shadowColor: Colors.transparent,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                          ),
-                          child: const Text(
-                            'Get Started',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white, // ou AppColors.textTitle se for branco
-                            ),
-                          ),
-                        ),
+                      child: PrimaryButton(
+                        text: 'Get Started',
+                        onPressed: () {
+                          // ação do botão
+                        },
                       ),
                     ),
                   ),
-
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

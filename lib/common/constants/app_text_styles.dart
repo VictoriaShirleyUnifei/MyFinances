@@ -4,7 +4,7 @@ class AppTextStyles {
   AppTextStyles._();
 
   static TextStyle bigText = TextStyle(
-    fontSize: 50.0,
+    fontSize: 40.0,
     fontFamily: 'Inter',
     fontWeight: FontWeight.bold, // ou FontWeight.w700
   );

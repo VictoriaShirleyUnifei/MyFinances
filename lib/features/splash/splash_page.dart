@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:my_finances/common/app_colors.dart';
-import 'package:my_finances/common/app_text_styles.dart';
+import 'package:my_finances/common/constants/app_colors.dart';
+import 'package:my_finances/common/constants/app_text_styles.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_finances/common/constants/app_colors.dart';
+import 'package:my_finances/features/profile/profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,7 +16,7 @@ class _HomePageState extends State<HomePage> {
     Center(child: Text('Home')),
     Center(child: Text('Statistics')),
     Center(child: Text('Wallet')),
-    Center(child: Text('Profile')),
+    ProfilePage(),
   ];
 
   void _onItemTapped(int index) {

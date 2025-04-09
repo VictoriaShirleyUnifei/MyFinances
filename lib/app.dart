@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_finances/features/login/login_page.dart';
+import 'package:my_finances/features/forgot_password/forgot_password_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -7,7 +7,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginPage()
+      home: ForgotPasswordPage()
     );
   }
 }

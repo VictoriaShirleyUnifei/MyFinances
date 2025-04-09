@@ -6,27 +6,19 @@ import 'package:my_finances/common/widgets/primary_button.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:logger/logger.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class ForgotPasswordPage extends StatefulWidget {
+  const ForgotPasswordPage({super.key});
 
   @override
-  LoginPageState createState() => LoginPageState();
+  ForgotPasswordPageState createState() => ForgotPasswordPageState();
 }
 
-class LoginPageState extends State<LoginPage> {
+class ForgotPasswordPageState extends State<ForgotPasswordPage> {
   final logger = Logger();
 
   final form = FormGroup({
     'email': FormControl<String>(
       validators: [Validators.required, Validators.email],
-    ),
-    'password': FormControl<String>(
-      validators: [
-        Validators.required,
-        Validators.minLength(8),
-        Validators.pattern(r'[A-Z]'),
-        Validators.pattern(r'[0-9]'),
-      ],
     ),
   });
 
@@ -48,15 +40,27 @@ class LoginPageState extends State<LoginPage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'Welcome Back!',
+                        'Reset your Password',
                         textAlign: TextAlign.center,
                         style: AppTextStyles.bigText.copyWith(
                           color: AppColors.primary,
                         ),
                       ),
                       const SizedBox(height: 20),
-                      Image.asset('assets/images/login.png'),
+                      Image.asset('assets/images/forgot_password.png'),
+                      const SizedBox(height: 20),
+
+                      Text(
+                        'Enter your email address and a link will be sent to reset your password.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16, 
+                          color: AppColors.textSecondary
+                        ),
+                      ),
                       const SizedBox(height: 30),
+
 
                       // EMAIL
                       CustomReactiveTextField(
@@ -71,35 +75,6 @@ class LoginPageState extends State<LoginPage> {
                       ),
                       const SizedBox(height: 20),
 
-                      // PASSWORD
-                      CustomReactiveTextField(
-                        formControlName: 'password',
-                        label: 'Your Password',
-                        obscureText: true,
-                        validationMessages: {
-                          ValidationMessage.required: (_) =>
-                              'Password is required',
-                          ValidationMessage.minLength: (_) =>
-                              'Minimum 8 characters',
-                          ValidationMessage.pattern: (_) =>
-                              'Include at least one number and uppercase letter',
-                        },
-                      ),
-                      const SizedBox(height: 10),
-                     Align(
-                        alignment: Alignment.centerRight,
-                        child: GestureDetector(
-                          onTap: () {
-                            // ação de recuperar senha
-                          },
-                          child: Text(
-                            'Forgot Password?',
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-
-
                       // BUTTON
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 40.0),
@@ -109,7 +84,7 @@ class LoginPageState extends State<LoginPage> {
                           child: ReactiveFormConsumer(
                             builder: (context, form, child) {
                               return PrimaryButton(
-                                text: 'Sign In',
+                                text: 'Send Link',
                                 onPressed: form.valid
                                     ? () {
                                         final value = form.value;
@@ -145,6 +120,7 @@ class LoginPageState extends State<LoginPage> {
                           ),
                         ],
                       ),
+                      const SizedBox(height: 200),
                     ],
                   ),
                 ),

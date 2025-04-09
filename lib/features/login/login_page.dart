@@ -85,7 +85,20 @@ class LoginPageState extends State<LoginPage> {
                               'Include at least one number and uppercase letter',
                         },
                       ),
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 10),
+                     Align(
+                        alignment: Alignment.centerRight,
+                        child: GestureDetector(
+                          onTap: () {
+                            // ação de recuperar senha
+                          },
+                          child: Text(
+                            'Forgot Password?',
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+
 
                       // BUTTON
                       Padding(
@@ -96,7 +109,7 @@ class LoginPageState extends State<LoginPage> {
                           child: ReactiveFormConsumer(
                             builder: (context, form, child) {
                               return PrimaryButton(
-                                text: 'Sign Up',
+                                text: 'Sign In',
                                 onPressed: form.valid
                                     ? () {
                                         final value = form.value;
